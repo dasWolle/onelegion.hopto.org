@@ -1,9 +1,15 @@
 <template>
-  <div id="app" class="h-screen w-screen overflow-auto">
+  <div id="app" class="h-screen w-screen overflow-hidden">
     <Navbar></Navbar>
-    <Header></Header>
-    <router-view />
-    <Footer></Footer>
+    <div class="h-screen w-screen overflow-auto flex flex-col justify-between">
+      <div>
+        <Header></Header>
+        <div class="container mx-auto">
+          <router-view />
+        </div>
+      </div>
+      <Footer></Footer>
+    </div>
   </div>
 </template>
 

@@ -2,6 +2,17 @@
 @tailwind components;
 
 // custom styles go here
-.test {color: red;}
+h1 {
+  @apply text-center text-3xl font-semibold;
+}
+h2 {
+  @apply text-center text-2xl font-semibold;
+}
+h3 {
+  @apply text-xl font-semibold;
+}
+h4 {
+  @apply font-semibold;
+}
 
 @tailwind utilities;

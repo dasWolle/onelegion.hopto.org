@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-gray-900" id="nav">
-    <div class="flex items-center justify-between py-2 px-4" id="nav">
+  <div class="bg-blue-100 absolute w-screen" id="nav">
+    <div class="flex items-center justify-between py-2 px-4">
       <div>
-        <router-link class="text-white" to="/">LOGO</router-link>
+        <router-link to="/">LOGO</router-link>
       </div>
       <div class="relative z-20">
         <div
@@ -10,16 +10,16 @@
           class="flex flex-col items-center p-3 cursor-pointer"
           ref="hamburger"
         >
-          <div class="border-white border-solid border-t-2 w-6"></div>
-          <div class="border-white border-solid border-t-2 mt-2 w-4"></div>
-          <div class="border-white border-solid border-t-2 mt-2 w-6"></div>
+          <div class="border-black border-solid border-t-2 w-6"></div>
+          <div class="border-black border-solid border-t-2 mt-2 w-4"></div>
+          <div class="border-black border-solid border-t-2 mt-2 w-6"></div>
         </div>
         <div
-          class="bg-gray-800 flex-col flex p-3 object-cover absolute right-0 rounded-lg -mt-2"
+          class="bg-gray-100 text-gray-700 flex-col flex p-3 object-cover absolute right-0 rounded-lg -mt-2"
           v-if="isOpen"
         >
           <template v-for="link in links">
-            <div @click="close" class="text-gray-200 px-1 rounded hover:text-white hover:bg-gray-700 text-2xl sm:text-lg">
+            <div @click="close" class="px-1 rounded hover:text-black hover:bg-gray-300 text-2xl sm:text-lg">
               <router-link :key="link.to" :to="link.to">
                 {{ link.label }}
               </router-link>
@@ -43,8 +43,11 @@
       return {
         isOpen: false,
         links: [
-          { to: "/", label: "Home" },
-          { to: "About", label: "About" }
+          { to: { name: "Home" }, label: "Home" },
+          { to: { name: "About" }, label: "About" },
+          { to: { name: "Events" }, label: "Events" },
+          { to: { name: "PvE" }, label: "PvE" },
+          { to: { name: "PvP" }, label: "PvP" },
         ]
       };
     },

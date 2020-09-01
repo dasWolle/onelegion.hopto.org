@@ -1,6 +1,6 @@
 <template>
-  <div class="w-screen bg-green-200 text-center text-3xl">
-    ~ Header ~
+  <div class="w-full bg-green-200 pt-20 pb-3">
+    <h1>~ This week: Tower of Doom ~</h1>
   </div>
 </template>
 
