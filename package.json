@@ -10,6 +10,10 @@
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^3.0.0-1",
     "core-js": "^3.6.5",
     "tailwindcss": "^1.7.6",
     "vue": "^3.0.0-0",

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-blue-100 absolute w-screen" id="nav">
+  <div class="bg-blue-900 text-white absolute w-screen" id="nav">
     <div class="flex items-center justify-between py-2 px-4">
       <div>
         <router-link to="/">LOGO</router-link>
@@ -10,9 +10,9 @@
           class="flex flex-col items-center p-3 cursor-pointer"
           ref="hamburger"
         >
-          <div class="border-black border-solid border-t-2 w-6"></div>
-          <div class="border-black border-solid border-t-2 mt-2 w-4"></div>
-          <div class="border-black border-solid border-t-2 mt-2 w-6"></div>
+          <div class="border-white border-solid border-t-2 w-6"></div>
+          <div class="border-white border-solid border-t-2 mt-2 w-4"></div>
+          <div class="border-white border-solid border-t-2 mt-2 w-6"></div>
         </div>
         <div
           class="bg-gray-100 text-gray-700 flex-col flex p-3 object-cover absolute right-0 rounded-lg -mt-2"

@@ -1,6 +1,6 @@
 <template>
-  <div class="flex">
-    <div>Teams für {{ place }}</div>
+  <div class="">
+    <h4 class="mb-4">Teams für {{ place }}:</h4>
     <template v-for="team in teams">
       <Team :team="team"></Team>
     </template>
@@ -14,7 +14,8 @@
     components: { Team },
     props: {
       place: String,
-      teams: Array
+      teams: Array,
+      mop: Boolean
     }
   };
 </script>

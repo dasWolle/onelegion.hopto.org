@@ -1,13 +1,16 @@
 <template>
   <div>
-    <div class="mt-64 mb-64 pt-64 pb-64">
+    <div class="pt-16 pb-16">
       Delve
     </div>
+    <Teams place="delve" :teams="$store.getters.delveTeams"></Teams>
   </div>
 </template>
 
 <script>
+  import Teams from "@/components/Teams";
   export default {
-    name: "Delve"
+    name: "Delve",
+    components: { Teams }
   };
 </script>
