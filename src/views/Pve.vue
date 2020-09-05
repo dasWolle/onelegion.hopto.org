@@ -1,14 +1,16 @@
 <template>
-  <div class="text-xl p-5">PvE</div>
   <div>
-    <template v-for="link in links">
-      <router-link :to="link.to">
-        {{ link.label }}
-      </router-link>
-    </template>
-  </div>
-  <div>
-    <router-view></router-view>
+    <div class="text-xl p-5">PvE</div>
+    <div>
+      <template v-for="link in links">
+        <router-link :to="link.to">
+          {{ link.label }}
+        </router-link>
+      </template>
+    </div>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
   <h1>Events</h1>
 
   <div>
-    <router-link :to="{ name: 'guildEvent' }"><h2>Guild Event</h2></router-link>
+    <router-link :to="{ name: $store.state.currentGuildEvent }"><h2>Guild Event</h2></router-link>
 
   </div>
   <div>

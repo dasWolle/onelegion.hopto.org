@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import GuildEvent from "@/views/subviews/GuildEvent";
+import RaidBoss from "@/views/subviews/RaidBoss";
+import Guildwars from "@/views/subviews/Guildwars";
+import Invasion from "@/views/subviews/Invasion";
+import TowerOfDoom from "@/views/subviews/TowerOfDoom";
 
 const routes = [
   {
@@ -19,13 +23,17 @@ const routes = [
   {
     path: "/events",
     name: "Events",
-    component: () => import(/* webpackChunkName: "events" */ "../views/Events.vue"),
+    component: () => import(/* webpackChunkName: "events" */ "../views/Events.vue")
+  },
+  {
+    path: "/guild_event",
+    name: "guildEvent",
+    component: GuildEvent,
     children: [
-      {
-        path: "guild_event",
-        name: "guildEvent",
-        component: GuildEvent
-      }
+      { path: "raid_boss", name: "raidBoss", component: RaidBoss },
+      { path: "guild_wars", name: "gw", component: Guildwars },
+      { path: "invasion", name: "invasion", component: Invasion },
+      { path: "tod", name: "tod", component: TowerOfDoom },
     ]
   },
   {

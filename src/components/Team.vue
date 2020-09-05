@@ -2,8 +2,8 @@
   <div class="">
     <h5>{{ team.name }}</h5>
     <div class="flex">
-      <template v-for="unit in team.units">
-        <Unit :unit="unit" class="p-3"></Unit>
+      <template v-for="unitID in team.units">
+        <Unit :unitID="unitID"></Unit>
       </template>
       <div class="p-3">{{ team.banner }}</div>
       <div class="p-3">{{ team.heroClass }}</div>
