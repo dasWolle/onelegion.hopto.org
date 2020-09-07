@@ -5,7 +5,10 @@ export default {
       state.currentGuildEvent.troopType
     );
   },
-  delveTeams(state) { return state.teams.filter(team => team.for.includes("delve")); },
+  dayEventName: (state) => state.eventNames[state.currentDayEvent.name],
+  delveTeams(state) {
+    return state.teams.filter(team => team.for.includes("delve"));
+  },
   guildEventName: (state) => state.eventNames[state.currentGuildEvent.name],
   guildEventKingdom(state) {
     const kingdomID = state.currentGuildEvent.kingdomID;
@@ -18,11 +21,30 @@ export default {
     }
     return result;
   },
-  dayEventName: (state) => state.eventNames[state.currentDayEvent.name],
   guildWarTeams: (state) => (color, type) => {
     let result = state.teams.filter(team => team.for.includes("gw"));
     if (color) result = result.filter(team => team.for.includes(color));
     if (type) result = result.filter(team => team.for.includes(type));
+    return result;
+  },
+  heroClass: (state) => (heroID) => {
+    let result = {};
+    for (let i = 0; i < state.classes.length; i++) {
+      if (state.classes[i].id === heroID) {
+        result = state.classes[i];
+        break;
+      }
+    }
+    return result;
+  },
+  kingdom: (state) => (id) => {
+    let result = {};
+    for (let i = 0; i < state.kingdoms.length; i++) {
+      if (state.kingdoms[i].id === id) {
+        result = state.kingdoms[i];
+        break;
+      }
+    }
     return result;
   },
   raidTeams: (state) => (kingdom, type) => {
@@ -39,6 +61,15 @@ export default {
       }
     }
     return result;
+  },
+  weapon: (state) => (weaponID) => {
+    let result = {};
+    for (let i = 0; i < state.weapons.length; i++) {
+      if (state.weapons[i].id === weaponID) {
+        result = state.weapons[i];
+        break;
+      }
+    }
+    return result;
   }
-}
-;
+};

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import Team from "@/components/Team";
+  import Team from "@/components/team/Team";
   export default {
     name: "Teams",
     components: { Team },

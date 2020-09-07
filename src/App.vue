@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="h-screen w-screen overflow-hidden">
+  <div id="app" class="h-screen w-screen overflow-hidden text-gray-800">
     <Navbar></Navbar>
     <div class="h-screen w-screen overflow-auto flex flex-col justify-between">
       <Header></Header>
