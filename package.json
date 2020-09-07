@@ -5,9 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --inline --hot",
     "build": "vue-cli-service build",
-    "build-dev": "vue-cli-service build --mode development",
-    "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e"
+    "build-dev": "vue-cli-service build --mode development"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -23,9 +21,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "@vue/cli-plugin-babel": "~4.5.4",
-    "@vue/cli-plugin-e2e-cypress": "~4.5.4",
     "@vue/cli-plugin-router": "~4.5.4",
-    "@vue/cli-plugin-unit-mocha": "~4.5.4",
     "@vue/cli-plugin-vuex": "~4.5.4",
     "@vue/cli-service": "~4.5.4",
     "@vue/compiler-sfc": "^3.0.0-rc.10",
