@@ -51,25 +51,26 @@ export default {
     kingdom = "" + kingdom;
     return state.teams.filter(team => team.for.includes("raid") && team.for.includes(kingdom) && team.for.includes(type));
   },
+  searchUnits: (state) => (name) => {
+    let result = [];
+    for (let i = 0; i < state.troops.length; i++) {
+      if (state.troops[i].name.toLowerCase().includes(name.toLowerCase())) {
+        result.push(state.troops[i]);
+      }
+    }
+    return result;
+  },
   todTeams: (state) => (color) => state.teams.filter(team => team.for.includes("tod") && team.for.includes(color)),
   unit: (state) => (unitID) => {
+    if (typeof unitID) unitID = parseInt(unitID);
+    const searchArray = unitID >= 6000 ? state.troops : state.weapons;
     let result = {};
-    for (let i = 0; i < state.troops.length; i++) {
-      if (state.troops[i].id === unitID) {
-        result = state.troops[i];
+    for (let i = 0; i < searchArray.length; i++) {
+      if (searchArray[i].id === unitID) {
+        result = searchArray[i];
         break;
       }
     }
     return result;
   },
-  weapon: (state) => (weaponID) => {
-    let result = {};
-    for (let i = 0; i < state.weapons.length; i++) {
-      if (state.weapons[i].id === weaponID) {
-        result = state.weapons[i];
-        break;
-      }
-    }
-    return result;
-  }
 };

@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import GuildEvent from "@/views/subviews/GuildEvent";
 import RaidBoss from "@/views/subviews/RaidBoss";
 import Guildwars from "@/views/subviews/Guildwars";
 import Invasion from "@/views/subviews/Invasion";
 import TowerOfDoom from "@/views/subviews/TowerOfDoom";
+import TeamEditor from "@/views/TeamEditor";
 
 const routes = [
   {
@@ -28,7 +28,8 @@ const routes = [
   {
     path: "/guild_event",
     name: "guildEvent",
-    component: GuildEvent,
+    component: () => import(/* webpackChunkName: "guildevent" */ "../views/subviews/GuildEvent.vue"),
+    // component: GuildEvent,
     children: [
       { path: "raid_boss", name: "raidBoss", component: RaidBoss },
       { path: "guild_wars", name: "gw", component: Guildwars },
@@ -52,6 +53,12 @@ const routes = [
     path: "/pvp",
     name: "PvP",
     component: () => import(/* webpackChunkName: "pvp" */ "../views/Pvp.vue")
+  },
+  {
+    path: "/team_editor",
+    name: "TeamEditor",
+    // component: () => import(/* webpackChunkName: "teameditor" */ "../views/TeamEditor.vue")
+    component: TeamEditor
   },
   {
     path: "/:catchAll(.*)",

@@ -19,4 +19,15 @@ h5 {
   @apply font-semibold;
 }
 
+.fade-enter-active,
+.fade-leave-active { transition: opacity .5s; }
+
+.fade-enter-from,
+.fade-leave-to { opacity: 0; }
+
+.select_dropdown {
+  @apply absolute px-2 flex-col bg-white z-10 overflow-auto;
+  max-height: 200px;
+}
+
 @tailwind utilities;

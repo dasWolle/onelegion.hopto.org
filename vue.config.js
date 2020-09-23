@@ -1,4 +1,9 @@
 module.exports = {
+  devServer: {
+    watchOptions: {
+      poll: true
+    }
+  },
   configureWebpack: {
     optimization: {
       splitChunks: false

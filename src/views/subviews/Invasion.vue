@@ -1,5 +1,5 @@
 <template>
-Invasion
+  <div class="invasion">Invasion</div>
 </template>
 
 <script>

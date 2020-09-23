@@ -1,5 +1,5 @@
 <template>
-Tower of Dooom
+  <div class="tod">Tower of Dooom</div>
 </template>
 
 <script>

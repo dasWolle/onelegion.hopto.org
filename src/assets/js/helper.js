@@ -24,6 +24,6 @@ export function getColor(colorNumber) {
     result.push("brown");
     colorNumber = colorNumber - 1;
   }
-  if (colorNumber !== 0) console.error("sth went wrong");
+  if (colorNumber !== 0) console.error("not a valid color(combination): " + colorNumber);
   return result;
 }

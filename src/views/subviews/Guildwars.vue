@@ -1,5 +1,7 @@
 <template>
-Guildwars
+  <div class="guildwars">
+    Guildwars
+  </div>
 </template>
 
 <script>

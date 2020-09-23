@@ -1,21 +1,19 @@
 <template>
-  <div class="m-2 h-full shadow rounded-lg bg-gray-300 bg-opacity-50">
-    <a :href="unit.pageUrl">
-      <div class="p-1">
-        <img :src="unit.imageUrl" class="w-full">
+  <a :href="unit.pageUrl">
+    <div class="p-1">
+      <img :src="unit.imageUrl" class="w-full">
+    </div>
+    <div class="p-3">
+      <div class="flex">
+        <template v-for="color in colors">
+          <div :class="'px-1 mr-1 rounded-lg bg-opacity-75 bg-mana-' + color">{{ color }}</div>
+        </template>
       </div>
-      <div class="p-3">
-        <div class="flex">
-          <template v-for="color in colors">
-            <div :class="'px-1 mr-1 rounded-lg bg-opacity-75 bg-mana-' + color">{{ color }}</div>
-          </template>
-        </div>
-        <div class="font-semibold">{{ unit.name }}</div>
-        <div class="">{{ unit.type }}</div>
-        <div class="">{{ unit.kingdomName }}</div>
-      </div>
-    </a>
-  </div>
+      <div class="font-semibold">{{ unit.name }}</div>
+      <div class="">{{ unit.type }}</div>
+      <div class="">{{ unit.kingdomName }}</div>
+    </div>
+  </a>
 </template>
 
 <script>

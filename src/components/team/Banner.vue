@@ -1,8 +1,6 @@
 <template>
-  <div class="m-2 h-full shadow rounded-lg bg-gray-300 bg-opacity-50">
-    <img :src="bannerImage">
-    <div class="p-3">{{ bannerName }}
-    </div>
+  <img :src="bannerImage">
+  <div class="p-3">{{ bannerName }}
   </div>
 </template>
 

@@ -1,35 +1,41 @@
 <template>
-  <div class="">
+  <div class="team">
     <h5>{{ team.name }}</h5>
     <div class="flex flex-wrap">
       <template v-for="unitID in team.units">
         <template v-if="unitID >= 6000">
-          <div class="w-1/6">
-            <Unit :unitID="unitID"></Unit>
+          <div class="w-1/6 flex">
+            <Card>
+              <Unit :unitID="unitID"></Unit>
+            </Card>
           </div>
         </template>
         <template v-else>
-          <div class="w-1/6">
-            <Weapon :weaponID="unitID"></Weapon>
+          <div class="w-1/6 flex">
+            <Card>
+              <Weapon :weaponID="unitID"></Weapon>
+              <HeroClass :heroClassID="team.heroClassID"></HeroClass>
+            </Card>
           </div>
         </template>
       </template>
-      <div class="w-1/6">
-        <Banner :bannerKingdomID="this.team.bannerKingdomID"></Banner>
+      <div class="w-1/6 flex">
+        <Card>
+          <Banner :bannerKingdomID="this.team.bannerKingdomID"></Banner>
+        </Card>
       </div>
-      <div class="w-1/6">
-        <HeroClass :heroClassID="team.heroClassID"></HeroClass>
-      </div>
-      <div class="px-3">
-        <div class="font-bold text-center px-2 text-green-600">
-          <font-awesome-icon icon="plus-circle"></font-awesome-icon>
+    </div>
+    <div class="flex">
+      <div>{{ team.description }}</div>
+      <div class="px-3 flex">
+        <div class="text-2xl text-center px-2">
+          <font-awesome-icon icon="thumbs-up"></font-awesome-icon>
         </div>
-        <div class="font-bold text-center px-2 text-red-300">
-          <font-awesome-icon icon="minus-circle"></font-awesome-icon>
+        <div class="text-2xl text-center px-2">
+          <font-awesome-icon icon="thumbs-down"></font-awesome-icon>
         </div>
       </div>
     </div>
-    <div>Beschreibung</div>
   </div>
 </template>
 
@@ -38,10 +44,11 @@
   import Unit from "@/components/team/Unit";
   import Weapon from "@/components/team/Weapon";
   import HeroClass from "@/components/team/HeroClass";
+  import Card from "@/components/Card";
 
   export default {
     name: "Team",
-    components: { HeroClass, Weapon, Banner, Unit },
+    components: { Card, HeroClass, Weapon, Banner, Unit },
     props: { team: Object },
   };
 </script>
