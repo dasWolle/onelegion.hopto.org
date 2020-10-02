@@ -1,5 +1,5 @@
 <template>
-  <div class="m-2 flex-grow shadow rounded-lg bg-gray-300 flex flex-col">
+  <div class="flex-grow shadow rounded-lg bg-gray-300 text-gray-800 flex flex-col">
     <slot></slot>
     <div>
       <slot name="image"></slot>

@@ -6,7 +6,7 @@
     <div class="p-3">
       <div class="flex">
         <template v-for="color in colors">
-          <div :class="'px-1 mr-1 rounded-lg bg-opacity-75 bg-mana-' + color">{{ color }}</div>
+          <div :class="'text-center px-1 mr-1 rounded-lg bg-opacity-75 bg-mana-' + color">{{ color }}</div>
         </template>
       </div>
       <div class="font-semibold">{{ unit.name }}</div>

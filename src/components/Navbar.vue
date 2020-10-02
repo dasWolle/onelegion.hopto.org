@@ -52,6 +52,7 @@
           { to: { name: "Events" }, label: "Events" },
           { to: { name: "PvE" }, label: "PvE" },
           { to: { name: "PvP" }, label: "PvP" },
+          { to: { name: "Teams" }, label: "All Teams" },
           { to: { name: "TeamEditor" }, label: "Team Editor" },
         ]
       };

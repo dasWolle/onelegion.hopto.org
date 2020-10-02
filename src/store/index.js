@@ -1183,19 +1183,29 @@ export default createStore({
     teams: [
       {
         bannerKingdomID: 3006,
+        counterMinus: 10,
+        counterPlus: 0,
+        creator: "Wolle",
         description: "Beschreibung",
-        for: [ "delve", "raid", "yellow", "red", "3006", "knight" ],
         heroClassID: 11135,
+        id: 1,
         name: "Team 1",
+        result: "-",
         units: [ 6000, 6001, 6002, 1003 ],
+        usableFor: [ "delve", "raid", "yellow", "red", "3006", "knight" ],
       },
       {
         bannerKingdomID: 3037,
+        counterMinus: 0,
+        counterPlus: 3,
+        creator: "Wolle",
         description: "Just keep everything on cooldown, Holy St. Astara with lowest priority so she can enchant the others.",
-        for: [ "challenge", "delve", "human", "raid", "yellow", "3006", "knight" ],
         heroClassID: 11219,
-        name: "Team 1",
+        id: 23,
+        name: "Team 1337",
+        result: "-",
         units: [ 1221, 6259, 6632, 6320 ],
+        usableFor: [ "challenge", "delve", "human", "raid", "yellow", "3006", "knight" ],
       }
     ],
     troops: [

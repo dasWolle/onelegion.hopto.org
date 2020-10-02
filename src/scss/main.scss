@@ -2,21 +2,15 @@
 @tailwind components;
 
 // custom styles go here
-h1 {
-  @apply text-center text-3xl font-semibold;
-}
-h2 {
-  @apply text-center text-2xl font-semibold;
-}
-h3 {
-  @apply text-xl font-semibold;
-}
-h4 {
-  @apply text-lg font-semibold;
-}
-
-h5 {
-  @apply font-semibold;
+button {
+  @apply rounded-lg shadow px-3 py-1;
+  &:hover {
+    @apply shadow-lg;
+  }
+  &.btn-gray {
+    @apply bg-gray-200;
+    &:hover { @apply bg-gray-100; }
+  }
 }
 
 .fade-enter-active,
@@ -24,6 +18,17 @@ h5 {
 
 .fade-enter-from,
 .fade-leave-to { opacity: 0; }
+
+h1 { @apply text-center text-3xl font-semibold; }
+h2 { @apply text-center text-2xl font-semibold; }
+h3 { @apply text-xl font-semibold; }
+h4 { @apply text-lg font-semibold; }
+h5 { @apply font-semibold; }
+
+input, textarea {
+  @apply rounded-lg px-2 py-1 bg-white;
+  &:focus { @apply outline-none; }
+}
 
 .select_dropdown {
   @apply absolute px-2 flex-col bg-white z-10 overflow-auto;

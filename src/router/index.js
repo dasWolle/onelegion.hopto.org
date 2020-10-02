@@ -5,6 +5,7 @@ import Guildwars from "@/views/subviews/Guildwars";
 import Invasion from "@/views/subviews/Invasion";
 import TowerOfDoom from "@/views/subviews/TowerOfDoom";
 import TeamEditor from "@/views/TeamEditor";
+import Teams from "@/views/Teams";
 
 const routes = [
   {
@@ -55,10 +56,22 @@ const routes = [
     component: () => import(/* webpackChunkName: "pvp" */ "../views/Pvp.vue")
   },
   {
+    path: "/teams",
+    name: "Teams",
+    // component: () => import(/* webpackChunkName: "teams" */ "../views/Teams.vue")
+    component: Teams
+  },
+  {
     path: "/team_editor",
     name: "TeamEditor",
     // component: () => import(/* webpackChunkName: "teameditor" */ "../views/TeamEditor.vue")
-    component: TeamEditor
+    component: TeamEditor,
+    children:[
+      {
+        path: "/team_editor/:id",
+        component: TeamEditor,
+      }
+    ]
   },
   {
     path: "/:catchAll(.*)",

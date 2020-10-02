@@ -7,9 +7,11 @@
     <router-link :to="{ name: 'raidBoss' }" class="m-2 px-2 shadow hover:shadow-lg rounded-lg text-xl text-gray-800 ">Raid Boss</router-link>
     <router-link :to="{ name: 'invasion' }" class="m-2 px-2 shadow hover:shadow-lg rounded-lg text-xl text-gray-800 ">Invasion</router-link>
   </div>
-  <transition name="fade">
-    <router-view class="view"></router-view>
-  </transition>
+  <router-view v-slot="{ Component }">
+    <transition name="fade">
+      <component :is="Component" class="view" />
+    </transition>
+  </router-view>
 </template>
 
 <script>

@@ -1,8 +1,14 @@
 <template>
   <div class="relative">
-    <input :id="this.id" class="rounded-lg focus:outline-none px-2 py-1 bg-white" type="text" v-model="value" @focusin="show = true">
+    <input
+      @focusin.stop="show = true"
+      :id="this.id"
+      @input.stop="(e) => $emit('input', e.target.value)"
+      type="text"
+      v-model="content"
+    >
     <div class="absolute select_dropdown" :class="show ? '' : 'hidden'">
-      <template v-for="entry in $store.getters.searchUnits(value)">
+      <template v-for="entry in list">
         <div @click="selected(entry)" class="cursor-pointer hover:bg-blue-800 hover:text-white px-2 rounded-lg">
           {{ entry.name }}
         </div>
@@ -19,9 +25,9 @@
     },
     data() {
       return {
-        id: Math.random(),
+        content: "",
+        id: "aci_" + Math.random(),
         show: false,
-        value: "",
       };
     },
     methods: {
@@ -30,7 +36,7 @@
       },
       selected(entry) {
         this.$emit("selected", entry);
-        this.value = entry.name;
+        this.content = entry.name;
       }
     },
     created() {

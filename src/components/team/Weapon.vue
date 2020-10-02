@@ -1,6 +1,6 @@
 <template>
   <a :href="weapon.pageUrl">
-    <div class="p-5">
+    <div class="p-1">
       <img :src="weapon.imageUrl" class="w-full">
     </div>
     <div class="p-3">
@@ -30,7 +30,7 @@
     },
     computed: {
       colors() { return getColor(this.weapon.colors); },
-      weapon() { return this.$store.getters.weapon(parseInt(this.weaponID_dev)); }
+      weapon() { return this.$store.getters.unit(parseInt(this.weaponID_dev)); }
     },
     created() {
       this.weaponID_dev = this.weaponID;
